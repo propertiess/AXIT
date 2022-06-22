@@ -7,7 +7,9 @@ let menuMobileOpen = false
 menu.addEventListener('click', () => {
     if(!menuMobileOpen){
         menuMobileOpen = true
-
+        setTimeout(() => {
+            menuImg.style.filter = 'brightness(100)'
+        }, 100)
     }
     else {
         wrapper.style = 'max-height: none'
@@ -37,5 +39,8 @@ hiddenMenu.addEventListener('click', () => {
     hiddenMenu.style.display = 'none'
     hiddenMenu.style.visibility = 'hidden'
     menuMobileOpen = false
+    setTimeout(() => {
+        menuImg.style.filter = 'brightness(5)'
+    }, 300)
 
 })
