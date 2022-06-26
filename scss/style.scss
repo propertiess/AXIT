@@ -481,6 +481,7 @@ body {
 .active {
     opacity: 0;
     visibility: hidden;
+    position: absolute;
 }
 .active__scroll {
     max-height: 20%;
