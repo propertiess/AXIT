@@ -21,6 +21,10 @@
     font-family: Raleway;
     font-style: regular;
 }
+.image {
+    filter: brightness(100);
+    transition: filter .3s;
+}
 .btn {
     display: inline-flex;
     padding: 16px 30px;
@@ -76,10 +80,7 @@ body {
         max-height: 80px;
         margin-left: 1%;        
     }
-    .navbar__aside {
-        display: none;
-        visibility: hidden;
-    }
+    
     &__logo {
         justify-self: left;
         cursor: pointer;
@@ -290,10 +291,7 @@ body {
         color: #9A9A9A;
     }
 }
-.navbar__aside {
-    display: none;
-    visibility: hidden;
-}
+
 
 @media (max-width: 1200px) {
     // .wpapper {
@@ -395,6 +393,7 @@ body {
 
 }
 
+
 @media (max-width: 800px) {
     .navbar {
         justify-content: center;
@@ -420,17 +419,21 @@ body {
             width: 100px;
             z-index: 1000;
             left:0;
-            &:hover {
-                cursor: pointer;
-                img {
-                    width: 60%;
-                    filter: brightness(100);
-                }
-            }
-            img {
+            .image {
                 width: 60%;
-                filter: brightness(5);
+
             }
+            // &:hover {
+            //     cursor: pointer;
+            //     img {
+            //         width: 60%;
+            //         filter: brightness(100);
+            //     }
+            // }
+            // img {
+            //     width: 60%;
+            //     filter: brightness(5);
+            // }
         }
         position: static;
         
@@ -445,10 +448,11 @@ body {
         height: 100%;
         width: 100%;
         background: black;
-        display: none;
-        visibility: hidden;
-        top: 0%;
+        visibility: visible;
+        opacity: 1;
+        transition: .3s;
 
+        top: 0%;
         .navbar__list {
             font-size: 30px;
             flex-direction: column;
@@ -463,10 +467,21 @@ body {
             }
             
         }
+
     }
 }
 @media (max-width: 375px) {
     .header__signup__title {
         font-size: 18px;
     }
+}
+.active__btn {
+    filter: brightness(5);
+}
+.active {
+    opacity: 0;
+    visibility: hidden;
+}
+.active__scroll {
+    max-height: 20%;
 }
